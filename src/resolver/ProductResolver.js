@@ -2,9 +2,6 @@
 
 const { dynamoDb, tableName } = require('../config/dynamodb');
 
-
-
-
 const getProducts = async (obj, limit = 10) => {
   var scanFilter = {};
 
@@ -31,6 +28,26 @@ const getProducts = async (obj, limit = 10) => {
   return data.Items;
 };
 
+const getProduct = async (id, name) => {
+  if (!id && !name) {
+    return null;
+  }
+
+  const data = await dynamoDb
+    .get({
+      TableName: tableName,
+      Key: {
+        id: id,
+        name: name,
+      },
+    })
+    .promise()
+    .catch(e => console.error(e));
+
+  return data.Item;
+};
+
 module.exports = {
-  getProducts
+  getProducts,
+  getProduct
 };
