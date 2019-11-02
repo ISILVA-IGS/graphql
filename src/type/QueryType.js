@@ -20,12 +20,15 @@ const QueryType = new GraphQLObjectType({
         throw new Error('Não foi possível encontrar o registro.')
       }
     },
+    products: {
+      type: new GraphQLList(ProductType),
+      args:{
+        id: { type: GraphQLString },
+        name: { type: GraphQLString },
+      },
+      resolve: (_obj, { id, name }) => ProductResolver.getProducts({ id, name }, 10) 
+    }
   }),
 });
-
-const getProduct = () => {
-  console.log("heloooo")
-  return "helloooo"
-}
 
 module.exports.QueryType = QueryType;
