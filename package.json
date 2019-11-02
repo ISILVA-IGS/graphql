@@ -1,0 +1,55 @@
+{
+  "name": "clone-cercas",
+  "version": "1.0.0",
+  "description": "A single-module GraphQL endpoint with query and mutation functionality.",
+  "main": "handler.js",
+  "author": "keycar",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "coverage": "jest --coverage",
+    "lint": "eslint . --fix",
+    "test": "export ENVIRONMENT=local && jest . --runInBand --detectOpenHandles",
+    "prettier-check": "prettier -c --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
+    "prettify": "prettier --write --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
+    "offline": "serverless offline"
+  },
+  "dependencies": {
+    "@serverless/eslint-config": "^1.2.0",
+    "@types/graphql": "^14.5.0",
+    "aws-sdk": "^2.529.0",
+    "aws-serverless-express": "^3.3.6",
+    "cwd": "0.10.0",
+    "debug": "^4.1.1",
+    "express-graphql": "^0.9.0",
+    "graphiql": "^0.15.1",
+    "graphql": "^0.11.7",
+    "graphql-relay": "^0.6.0",
+    "request-promise": "^4.2.4",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@shelf/eslint-config": "0.7.0",
+    "@shelf/jest-dynamodb": "^1.4.1",
+    "airbnb-style": "^2.0.0",
+    "aws-sdk-mock": "^4.5.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "serverless": "^1.52.0",
+    "serverless-dynamodb-local": "^0.2.38",
+    "serverless-offline": "^5.11.0",
+    "supertest": "^4.0.2"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "bitbucket.org/keycar/kc-fence"
+  }
+}
