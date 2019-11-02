@@ -2,20 +2,25 @@
 
 const { GraphQLObjectType, GraphQLString, GraphQLList } = require('graphql');
 const { ProductType } = require('./ProductType');
-const Productresolver = require('../resolver/ProductResolver');
+const ProductResolver = require('../resolver/ProductResolver');
+
 const QueryType = new GraphQLObjectType({
   name: 'Query',
   description: 'Query any Fence by id and owner',
-  fields: {
-    products: {
-      type: new GraphQLList(ProductType),
+  fields: () => ({
+    product: {
+      type: ProductType,
       args: {
         id: { type: GraphQLString },
         name: { type: GraphQLString },
       },
-      resolve: (_obj, { id, name }) => Productresolver.getproducts({ id, name }, 10),
+      resolve: (_obj, { id, name }) => {
+        if(id || name) return ProductResolver.getProduct(id, name)
+
+        throw new Error('Não foi possível encontrar o registro.')
+      }
     },
-  },
+  }),
 });
 
 const getProduct = () => {
