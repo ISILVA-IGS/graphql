@@ -12,9 +12,9 @@ npm install serverless -g
 ```
 - Set environment variables
 ``` 
-export AWS_ACCESS_KEY_ID=FzwNRg9M+AKIATMR4E5JTWT5KD2JW 
+export AWS_ACCESS_KEY_ID
 
-export AWS_SECRET_ACCESS_KEY=FzwNRg9M+ZxSbuWmsCxchvqG1atRCoTZgAA4zhEPf0w=
+export AWS_SECRET_ACCESS_KEY
 
 export DYNAMO_ENDPOINT="http://localhost:8000" || "http://localhost:8000/shell" 
 ``` 
