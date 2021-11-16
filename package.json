@@ -18,7 +18,7 @@
   "dependencies": {
     "@serverless/eslint-config": "^1.2.0",
     "@types/graphql": "^14.5.0",
-    "aws-sdk": "^2.529.0",
+    "aws-sdk": "^2.814.0",
     "aws-serverless-express": "^3.3.6",
     "cwd": "0.10.0",
     "debug": "^4.1.1",
